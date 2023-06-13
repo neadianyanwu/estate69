@@ -1,9 +1,8 @@
-import Navigation from "@/features/common/modules/Navigation/Navigation";
+import DefaultLayout from "@/features/Layouts/DefaultLayout/DefaultLayout";
+
 
 export default function Home() {
   return (
-    <>
-      <Navigation />
-    </>
+    <DefaultLayout>Child</DefaultLayout>
   )
 }
