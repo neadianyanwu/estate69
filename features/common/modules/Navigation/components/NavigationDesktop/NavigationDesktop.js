@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { HiHomeModern } from 'react-icons/hi2';
 import { navigationLinks } from "../../navigationConsts";
@@ -14,6 +14,10 @@ const NavigationDesktop = () => {
                     <Text fontSize='2xl' fontWeight='black'>69</Text> 
                     </Box>
                 </Link>
+                {navigationLinks.map((item) => (
+                    <NavigationLink key={item.title} {...item} />
+                ))}
+                <Button padding='1rem' colorScheme='teal' fontSize='0.8rem' fontWeight='medium'>Create Listing</Button>
             </Flex>
         </Box>
        </Box>
@@ -31,4 +35,4 @@ const NavigationLink = ({ title, link, icon }) => {
         </Flex>
       </Link>
     );
-  }
+}
