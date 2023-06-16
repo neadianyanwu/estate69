@@ -6,7 +6,7 @@ const HeroBanner = () => {
     <Fade in>
     <Box
       position="relative"
-      minHeight={{ base: "110vh", sm: "80vh" }}
+      minHeight={{ base: "110vh", sm: "60vh" }}
       backgroundImage={`url('../img/ad.jpg')`}
       backgroundPosition="center"
       backgroundSize="cover"
