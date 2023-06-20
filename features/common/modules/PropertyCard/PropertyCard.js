@@ -1,10 +1,61 @@
-import { Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { usePropertyFormat } from "../../Hooks/usePropertyFormat";
+import { TbBed, TbBath, TbRuler } from"react-icons/tb";
+import Link from "next/link";
 
-const PropertyCard = () => {
+const PropertyCard = (property) => {
+    const {
+        address,
+        coverPhoto,
+        propertyType,
+        price,
+        title,
+        rooms,
+        baths,
+        purpose,
+        sqSize,
+        externalID
+    } = usePropertyFormat(property);
     return ( 
-        <>
-            <Text>Test</Text>
-        </>
+       <Box marginBottom="4rem" backgroundColor="#fff">
+            <Link href={`/properties/${externalID}`}>
+                <Box backgroundImage={`url("${coverPhoto}")`} height="250px" backgroundPosition="center center"
+                    backgroundSize="cover" position="relative" display="flex"
+                    flexDirection="column">
+                    <Box margin="1rem"><Badge colorScheme="green">{purpose}</Badge></Box>
+                    <Box height="50%" bgGradient="linear(to-t, #0d0b1d19, #ffffff00 100%)"
+                    display="flex" alignItems="flex-end" padding="1rem">
+                        <Text fontSize="2xl" fontWeight="medium" color="whiteAlpha.800">
+                            {price}
+                        </Text>
+                    </Box>
+                </Box>
+                <Box padding="1.5rem">
+                    <Text fontSize="l" fontWeight="medium" marginBottom="1rem">
+                        {propertyType}
+                    </Text>
+                    <Text fontWeight="light" fontSize="sm" isTruncated>
+                        {address}
+                    </Text>
+                    <Text isTruncated>{title}</Text>
+                    <HStack spacing="1rem" marginTop="1rem">
+                        <Flex alignItems="center" gap="0.1rem">
+                            <TbBed/>    
+                            {rooms}
+                        </Flex>
+                        <Flex alignItems="center" gap="0.1rem">
+                            <TbBath/>    
+                            {baths}
+                        </Flex>
+                        <Flex alignItems="center" gap="0.1rem">
+                            <TbRuler/>    
+                            {sqSize}
+                            <sup>m2</sup>
+                        </Flex>
+                    </HStack>
+                </Box>
+            </Link>
+       </Box>
     );
 }
  

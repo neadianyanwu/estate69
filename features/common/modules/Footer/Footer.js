@@ -6,8 +6,8 @@ import { HiHomeModern } from "react-icons/hi2";
 const Footer = () => {
     return ( 
         <Box backgroundColor='teal.600'>
-            <Box maxWidth="1280px" margin='0 auto' paddingY='3rem' paddingX={{base: "2rem", sm: "0"}}>
-                <SimpleGrid columns='4' color='whiteAlpha.700' gap='1.7rem' minChildWidth='150px'>
+            <Box maxWidth="1280px" margin='0 auto' paddingY='2rem' paddingX={{base: "2rem", sm: "0"}}>
+                <SimpleGrid columns='4' color='whiteAlpha.700' gap='1.6rem' minChildWidth='200px'>
                     <Flex flexDirection="column" alignItems="center">
                         <FooterHeader title="Services" />
                         {services.map((item) => (
